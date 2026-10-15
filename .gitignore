@@ -1,0 +1,24 @@
+# Binaries
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Local SQLite databases
+data/
+*.db
+*.db-shm
+*.db-wal
+
+# Frontend dependencies and builds
+web/node_modules/
+web/.next/
+web/out/
+web/.env.local
+
+# IDE and OS files
+.DS_Store
+*.swp
+*.swo
