@@ -1,0 +1,20 @@
+services:
+  confluent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: confluent-app
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - DB_PATH=/data/confluent.db
+      - JWT_SECRET=change-me-to-a-very-secure-random-key-in-production
+      - ADMIN_PASSWORD=admin123
+    volumes:
+      - confluent-data:/data
+
+volumes:
+  confluent-data:
+    driver: local
